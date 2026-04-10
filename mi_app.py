@@ -27,13 +27,11 @@ class MiVentana(QDialog):
      
     
 
-        #  OPERACIONES 
+        #  SIGNOS
         self.ui.pushButton_11.clicked.connect(lambda: self.operacion("+"))
         self.ui.pushButton_10.clicked.connect(lambda: self.operacion("-"))
         self.ui.pushButton_6.clicked.connect(lambda: self.operacion("*"))
         self.ui.pushButton_13.clicked.connect(lambda: self.operacion("/"))
-
-        
         self.ui.pushButton_12.clicked.connect(self.resultado)
 
         #  BORRAR
@@ -44,13 +42,13 @@ class MiVentana(QDialog):
         texto = self.ui.lineEdit.text()
         self.ui.lineEdit.setText(texto + numero)
 
-    # ➕ GUARDAR OPERACIÓN
+    #  GUARDAR OPERACIÓN
     def operacion(self, op):
         self.num1 = float(self.ui.lineEdit.text())
         self.op = op
         self.ui.lineEdit.clear()
 
-    # 🟰 RESULTADO
+    # RESULTADO
     def resultado(self):
         num2 = float(self.ui.lineEdit.text())
 
@@ -65,7 +63,7 @@ class MiVentana(QDialog):
 
         self.ui.lineEdit.setText(str(res))
 
-    # 🧹 BORRAR
+    #  BORRAR
     def borrar(self):
         self.ui.lineEdit.clear()
 
